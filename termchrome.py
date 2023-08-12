@@ -1,4 +1,4 @@
-#install the psutil and pyautogui module in order to use this program.
+#install the psutil, pyautogui, and opencv-python module in order to use this program.
 #made by Eric Kim. This program is distributed under the GPLv2 license. This can be modified and distributed freely.
 import psutil
 from time import sleep
@@ -24,6 +24,7 @@ pg.press('enter')
 sleep(1)
 pg.hotkey('ctrl', 'shift', 'delete')
 sleep(1)
-delete = pg.locateOnScreen('delete.png')
+delete = pg.locateOnScreen('delete.png', confidence=0.7)
 x, y = pg.center(delete)
 pg.click(x, y)
+pg.hotkey('alt', 'f4')
