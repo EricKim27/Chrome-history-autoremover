@@ -4,14 +4,14 @@ import psutil
 from time import sleep
 import pyautogui as pg
 
-def is_process_running(process_name):
+def proc(process_name):
     for process in psutil.process_iter(['pid', 'name']):
         if process.info['name'] == process_name:
             return True
     return False
 
 while True:
-    chrome_running = is_process_running("chrome.exe")
+    chrome_running = proc("chrome.exe")
     if chrome_running:
         print("Chrome is still running.")
         sleep(1)
