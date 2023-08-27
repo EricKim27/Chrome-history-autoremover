@@ -3,6 +3,7 @@
 import psutil
 from time import sleep
 import pyautogui as pg
+import cv2
 
 def proc(process_name):
     for process in psutil.process_iter(['pid', 'name']):
